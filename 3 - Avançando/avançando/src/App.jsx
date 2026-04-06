@@ -7,6 +7,8 @@ import './App.css'
 import night from './assets/night.jpg'
 // 3- UseState
 import Data from './components/Data'
+// 4 - Renderização de lista
+import ListRender from './components/ListRender'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +22,8 @@ function App() {
         <img src={night} alt="Night"/>
         {/* 3 -useState */}
         <Data />
+        {/* Renderização de lista */}
+        <ListRender />
     </>
   )
 }
