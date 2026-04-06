@@ -9,6 +9,8 @@ import night from './assets/night.jpg'
 import Data from './components/Data'
 // 4 - Renderização de lista
 import ListRender from './components/ListRender'
+// 7 - Render Condicional
+import ConditionalRender from './components/ConditionalRender'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,8 +24,10 @@ function App() {
         <img src={night} alt="Night"/>
         {/* 3 -useState */}
         <Data />
-        {/* Renderização de lista */}
+        {/* 4 - Renderização de lista */}
         <ListRender />
+        {/* 7 - Render Condicional */}
+        <ConditionalRender />
     </>
   )
 }
