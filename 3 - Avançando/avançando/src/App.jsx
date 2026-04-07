@@ -11,6 +11,10 @@ import Data from './components/Data'
 import ListRender from './components/ListRender'
 // 7 - Render Condicional
 import ConditionalRender from './components/ConditionalRender'
+// 8 - props
+import ShowUserName from './components/ShowUserName'
+// 9 - Destruturando Props
+import CarDetails from './components/CarDetails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +32,10 @@ function App() {
         <ListRender />
         {/* 7 - Render Condicional */}
         <ConditionalRender />
+        {/* 8 - Props */}
+        <ShowUserName name="Luis"/>
+        {/* 9 - Destruturando Props*/}
+        <CarDetails brand={"VW"} km={999} color={"Vermelho"}/>
     </>
   )
 }
