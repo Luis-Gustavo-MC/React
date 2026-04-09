@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Children, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -15,16 +15,35 @@ import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 // 9 - Destruturando Props
 import CarDetails from './components/CarDetails'
-
+// 11 - renderização de componentes
   const cars = [
     {id:1, brand: "Ferrari" , color: "Vermelho" , km:0},
     {id:2, brand:"Kia" , color: "Branco" , km:80000},
     {id:3, brand:"Renault" , color: "Azul" , km:20000}
   ]
+// 12 - fragments
+import Fragments from './components/fragments'
+// 13 - children
+import Container from './components/container'
+// 14 - Função em prop
+import ExecuteFunction from './components/ExecuteFunction'
+// 15 - state lift
+import Message from './components/Message'
 
+import ChangeMessage from './components/ChangeMessage'
 
 function App() {
   const [count, setCount] = useState(0)
+  // 14 - Função em prop
+  function showMensage(){
+    console.log("teste")
+  }
+  // 15 - state lift
+  const [mensage,setMensage] = useState("")
+
+  const handleMensage = (msg) =>{
+    setMensage(msg)
+  }
 
   return (
     <>
@@ -50,6 +69,17 @@ function App() {
         {cars.map((car)=>(
           <CarDetails key={car.id} km={car.km} brand={car.brand} color = {car.color}/>
         ))}
+        {/* 12 - fragment */}
+        <Fragments/>
+        {/* 13 - container */}
+        <Container>
+          <p>Alguma coisa</p>
+        </Container>
+        {/* 14 - Função em prop*/}
+        <ExecuteFunction myFunction={showMensage}/>
+        {/*  15 - state lift */}
+        <Message msg={mensage}/>
+        <ChangeMessage handleMessage={handleMensage}/>
     </>
   )
 }
